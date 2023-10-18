@@ -1,0 +1,16 @@
+
+<div data-action="turbo:before-render->item#turboBeforeRenderHook" data-item-enter-class="animate__animated animate__bounce" data-controller="item" id="<%= dom_id item%>">
+<div>
+    <p>
+    <strong>Memo:</strong>
+    <%= item.memo %>
+  </p>
+
+</div>
+      <p>
+        <%= link_to "Show this item", item %>
+      </p>
+      <p>
+        <%= button_to "Destroy this item", item, method: :delete %>
+      </p>
+    </div>
