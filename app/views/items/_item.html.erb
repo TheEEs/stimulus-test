@@ -1,5 +1,4 @@
-
-<div data-action="turbo:before-render->item#turboBeforeRenderHook" data-item-enter-class="animate__animated animate__bounce" data-controller="item" id="<%= dom_id item%>">
+<%= turbo_frame_tag item, data:{action: "turbo:before-stream-render@document->item#turboBeforeRenderHook", item_enter_class: "animate__fadeIn", item_exit_class:"animate__fadeOut", controller:"item", item_id_value: dom_id(item)}, class: "animate__animated" do %>
 <div>
     <p>
     <strong>Memo:</strong>
@@ -8,9 +7,9 @@
 
 </div>
       <p>
-        <%= link_to "Show this item", item %>
+        <%= link_to "Update this item", edit_item_url(item), method: :update%>
       </p>
       <p>
         <%= button_to "Destroy this item", item, method: :delete %>
       </p>
-    </div>
+<% end %>

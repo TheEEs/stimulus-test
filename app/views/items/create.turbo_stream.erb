@@ -1,3 +1,5 @@
-<%= turbo_stream.append "items" do %>
+<%= turbo_stream.prepend "items" do %>
       <%= render @item %>
 <% end %>
+
+<%= turbo_stream.replace "new_item", partial: "items/form", locals:{ item: Item.new} %>
